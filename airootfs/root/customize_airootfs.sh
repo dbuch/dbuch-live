@@ -5,9 +5,9 @@ set -e -u
 sed -i 's/#\(en_US\.UTF-8\)/\1/' /etc/locale.gen
 locale-gen
 
-ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 
-cp -aT /etc/skel/ /root/
+# cp -aT /etc/skel/ /root/
 
 groupadd -rf sys
 groupadd -rf realtime
@@ -16,12 +16,9 @@ groupadd -rf nopasswdlogin
 
 usermod -s /usr/bin/zsh root
 
-if ! id dbuch-live; then
-  useradd -m -p "" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /bin/zsh dbuch-live
-  chown -R dbuch-live:users /home/dbuch-live
-fi
-
-#chmod 700 /root
+echo "dbuchOS ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+useradd dbuchOS -p "dbuchOS" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -m
+#useradd dbuch-live -p "dbuch-live" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -k /etc/skel.shadow -m
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
@@ -31,5 +28,14 @@ sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
-systemctl enable dbus-broker.service pacman-init.service choose-mirror.service NetworkManager.service gdm.service iwd.service systemd-resolved.service systemd-networkd.service
-systemctl set-default multi-user.target
+systemctl enable pacman-init.service
+systemctl enable choose-mirror.service
+systemctl set-default graphical.target
+
+systemctl enable dbus-broker.service
+systemctl enable NetworkManager.service
+systemctl enable gdm.service
+systemctl enable iwd.service
+systemctl enable systemd-resolved.service
+systemctl enable systemd-networkd.service
+systemctl enable bluetooth.service

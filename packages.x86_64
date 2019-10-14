@@ -68,7 +68,6 @@ haveged
 hdparm
 hitori
 htop
-hunspell-en_US
 hyperv
 iio-sensor-proxy
 intel-ucode
@@ -82,15 +81,11 @@ libphobos
 libtraceevent
 libva-utils
 libvdpau-va-gl
-linux-atm
-linux-headers
 linux-firmware
 logrotate
 lsscsi
-lz4
 man-db
 man-pages
-mc
 moreutils
 mtools
 ndisc6
@@ -103,10 +98,8 @@ nilfs-utils
 nmap
 ntfs-3g
 openconnect
-opencv
 openssh
 openvpn
-pacman-contrib
 partclone
 parted
 partimage
@@ -114,6 +107,8 @@ perf
 powertop
 ppp
 pptpclient
+pulseaudio
+pulseaudio-bluetooth
 python2-gobject
 python2-jedi
 python2-lxml
@@ -130,7 +125,6 @@ sdparm
 sg3_utils
 skim
 smartmontools
-spice-protocol
 sshfs
 sudo
 sushi
