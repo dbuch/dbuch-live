@@ -16,8 +16,10 @@ groupadd -rf nopasswdlogin
 
 usermod -s /usr/bin/zsh root
 
-useradd -m -p "" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /bin/zsh dbuch-live
-chown -R dbuch-live:users /home/dbuch-live
+if ! id dbuch-live; then
+  useradd -m -p "" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /bin/zsh dbuch-live
+  chown -R dbuch-live:users /home/dbuch-live
+fi
 
 #chmod 700 /root
 
@@ -29,5 +31,5 @@ sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
-systemctl enable pacman-init.service choose-mirror.service NetworkManager.service gdm.service iwd.service systemd-resolved.service
+systemctl enable pacman-init.service choose-mirror.service NetworkManager.service gdm.service iwd.service systemd-resolved.service systemd-networkd.service
 systemctl set-default multi-user.target

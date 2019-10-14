@@ -87,6 +87,7 @@ linux-headers
 linux-firmware
 logrotate
 lsscsi
+lz4
 man-db
 man-pages
 mc
