@@ -16,8 +16,8 @@ groupadd -rf nopasswdlogin
 
 usermod -s /usr/bin/zsh root
 
-echo "dbuchOS ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-useradd dbuchOS -p "dbuchOS" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -m
+echo "dbuch-live ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+useradd dbuch-live -p "dbuch-live" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -k /etc/skel.dbuchos -m
 #useradd dbuch-live -p "dbuch-live" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -k /etc/skel.shadow -m
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config

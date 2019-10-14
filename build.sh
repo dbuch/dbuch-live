@@ -3,10 +3,10 @@
 set -e -u
 
 iso_name=dbuch-live
-iso_label="dbuch-live-$(date +%Y%m)"
 iso_publisher="Daniel Buch Hansen <https://www.github.com/dbuch/>"
-iso_application="dbuch-live-iso"
+iso_application="The rescue/install image"
 iso_version=$(date +%Y.%m)
+iso_label="dbuch_live_${iso_version}"
 install_dir=arch
 work_dir=work
 out_dir=iso
