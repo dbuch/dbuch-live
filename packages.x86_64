@@ -13,7 +13,6 @@ bat
 bison
 bluez-utils
 bpf
-brasero
 broadcom-wl
 btrfs-progs
 caribou
@@ -23,7 +22,6 @@ clonezilla
 cpupower
 crda
 ddrescue
-devtools
 dhclient
 dialog
 dmraid
@@ -54,7 +52,6 @@ gnome-dictionary
 gnome-disk-utility
 gnome-documents
 gnome-logs
-gnome-multi-writer
 gnome-nettool
 gnome-screenshot
 gnome-shell-extensions
@@ -168,7 +165,6 @@ vinagre
 vino
 vpnc
 vulkan-extra-layers
-vulkan-html-docs
 vulkan-tools
 vulkan-trace
 wget
