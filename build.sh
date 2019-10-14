@@ -4,12 +4,12 @@ set -e -u
 
 iso_name=dbuch-live
 iso_label="dbuch-live-$(date +%Y%m)"
-iso_publisher="Daniel Buch Hansen <https://www.github.com/dbuch>"
-iso_application="dbuch Live iso"
+iso_publisher="Daniel Buch Hansen <https://www.github.com/dbuch/>"
+iso_application="dbuch-live-iso"
 iso_version=$(date +%Y.%m)
 install_dir=arch
 work_dir=work
-out_dir=out
+out_dir=iso
 gpg_key=
 
 verbose="-v"

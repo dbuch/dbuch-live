@@ -31,5 +31,5 @@ sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
-systemctl enable pacman-init.service choose-mirror.service NetworkManager.service gdm.service iwd.service systemd-resolved.service systemd-networkd.service
+systemctl enable dbus-broker.service pacman-init.service choose-mirror.service NetworkManager.service gdm.service iwd.service systemd-resolved.service systemd-networkd.service
 systemctl set-default multi-user.target

@@ -7,7 +7,6 @@ asp
 avfs
 b43-fwcutter
 baobab
-base
 bat
 bison
 bluez-utils
@@ -26,6 +25,7 @@ dmraid
 dnsmasq
 dnsutils
 dosfstools
+dbus-broker
 efibootmgr
 efitools
 elinks
@@ -144,7 +144,6 @@ turbostat
 unicode-emoji
 usbip
 usb_modeswitch
-vi
 vinagre
 vino
 vpnc
