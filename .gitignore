@@ -9,5 +9,4 @@
 *.log.*
 *.sig
 
-pkg/
-src/
+work/
