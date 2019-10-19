@@ -18,7 +18,6 @@ usermod -s /usr/bin/zsh root
 
 echo "dbuch-live ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 useradd dbuch-live -p "dbuch-live" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -k /etc/skel.dbuchos -m
-#useradd dbuch-live -p "dbuch-live" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -k /etc/skel.shadow -m
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
