@@ -19,6 +19,7 @@ chromium
 clonezilla
 cpupower
 crda
+dbuch-zsh-config
 ddrescue
 dhclient
 dialog
@@ -135,6 +136,8 @@ tilix
 tmon
 totem
 tree
+ttf-dejavu
+ttf-ionicons
 turbostat
 unicode-emoji
 usbip
