@@ -16,8 +16,18 @@ groupadd -rf nopasswdlogin
 
 usermod -s /usr/bin/zsh root
 
+passwd root <<EOF
+dbuchos
+dbuchos
+EOF
+
 echo "dbuch-live ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 useradd dbuch-live -p "dbuch-live" -g users -G "sys,realtime,wheel,nopasswdlogin" -s /usr/bin/zsh -k /etc/skel.dbuchos -m
+
+passwd dbuch-live <<EOF
+dbuchos
+dbuchos
+EOF
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
