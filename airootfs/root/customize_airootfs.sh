@@ -7,7 +7,7 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 
-# cp -aT /etc/skel/ /root/
+cp -aT /etc/skel/ /root/
 
 groupadd -rf sys
 groupadd -rf realtime
@@ -50,3 +50,5 @@ systemctl enable systemd-networkd.service
 systemctl enable bluetooth.service
 
 gsettings set com.gexperts.Tilix.Settings theme-variant dark
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
